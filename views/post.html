@@ -1,0 +1,37 @@
+    <!-- Page Header -->
+    <header class="intro-header" ng-style="{ 'background-image': 'url(' + postCtrl.blogpostData.headerBackgroundImg + ')',
+                                            'background-size': 'cover'}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <div class="post-heading">
+                        <h1>{{postCtrl.blogpostData.title}}</h1>
+                        <h2 class="subheading">{{postCtrl.blogpostData.subtitle}}</h2>
+                        <span class="meta">Posted by <a href="#">{{postCtrl.blogpostData.author}}</a> on <span>{{postCtrl.blogpostData.date | amDateFormat:'MMMM Do, YYYY'}}</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+
+                    <p ng-repeat-start="content in postCtrl.blogpostData['post-content']" ng-if="content.type=='paragraph'">{{content.content}}</p>
+
+                    <h2 class="section-heading" ng-if="content.type=='title'">{{content.content}}</h2>
+
+                    <blockquote class="blockquote" ng-if="content.type=='quote'">{{content.content}}</blockquote>
+
+                    <a href="#" ng-if="content.type=='image'">
+                        <img class="img-responsive" ng-src="{{content.url}}" alt="">
+                    </a>
+                    <span ng-repeat-end ng-if="content.type=='image'" class="caption text-muted">{{content.caption}}</span>
+
+                </div>
+            </div>
+        </div>
+    </article>
