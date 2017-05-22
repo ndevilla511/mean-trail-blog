@@ -1,0 +1,47 @@
+[{
+  "title": "Tomales Point Hike",
+  "subtitle": "",
+  "author": "Napoleon DeVilla",
+  "date": "March 24th, 2017",
+  "trail": {
+    "name": "Tomales Point Trail",
+    "park": "Point Reyes National Seashore",
+    "location": {
+      "address": "Point Reyes National Seashore, Tomales Point Trail, Inverness, CA 94937",
+      "coordinates": [38.1664528, -122.9916905]
+    },
+    "difficulty": "moderate",
+    "rating": 4
+  },
+  "post-content": [
+    {
+      "type": "paragraph",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in consectetur ex. In purus nisi, imperdiet at semper ut, malesuada at nisi. Nulla imperdiet nisl tempor dui commodo, in varius felis faucibus. Aliquam urna velit, ultrices a varius eu, suscipit at sapien. Nunc sollicitudin varius justo a fermentum. Aliquam blandit placerat tincidunt. Nunc nec tellus accumsan, euismod enim eu, vehicula dolor. Donec faucibus lacus eget ipsum tincidunt cursus. Phasellus posuere hendrerit nisi id rhoncus. Etiam sed scelerisque nisl. Sed molestie nisl et fermentum egestas. Pellentesque volutpat leo justo, id hendrerit dolor volutpat pretium. Pellentesque laoreet neque odio, porta sodales mauris luctus a. Maecenas volutpat arcu ut porta consequat. Phasellus nec rutrum dui. Nullam malesuada mi et volutpat laoreet."
+    },
+    {
+      "type": "paragraph",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in consectetur ex. In purus nisi, imperdiet at semper ut, malesuada at nisi. Nulla imperdiet nisl tempor dui commodo, in varius felis faucibus. Aliquam urna velit, ultrices a varius eu, suscipit at sapien. Nunc sollicitudin varius justo a fermentum. Aliquam blandit placerat tincidunt. Nunc nec tellus accumsan, euismod enim eu, vehicula dolor. Donec faucibus lacus eget ipsum tincidunt cursus. Phasellus posuere hendrerit nisi id rhoncus. Etiam sed scelerisque nisl. Sed molestie nisl et fermentum egestas. Pellentesque volutpat leo justo, id hendrerit dolor volutpat pretium. Pellentesque laoreet neque odio, porta sodales mauris luctus a. Maecenas volutpat arcu ut porta consequat. Phasellus nec rutrum dui. Nullam malesuada mi et volutpat laoreet."
+    },
+    {
+      "type": "title",
+      "content": "Section Title"
+    },
+    {
+      "type": "paragraph",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in consectetur ex. In purus nisi, imperdiet at semper ut, malesuada at nisi. Nulla imperdiet nisl tempor dui commodo, in varius felis faucibus. Aliquam urna velit, ultrices a varius eu, suscipit at sapien. Nunc sollicitudin varius justo a fermentum. Aliquam blandit placerat tincidunt. Nunc nec tellus accumsan, euismod enim eu, vehicula dolor. Donec faucibus lacus eget ipsum tincidunt cursus. Phasellus posuere hendrerit nisi id rhoncus. Etiam sed scelerisque nisl. Sed molestie nisl et fermentum egestas. Pellentesque volutpat leo justo, id hendrerit dolor volutpat pretium. Pellentesque laoreet neque odio, porta sodales mauris luctus a. Maecenas volutpat arcu ut porta consequat. Phasellus nec rutrum dui. Nullam malesuada mi et volutpat laoreet."
+    },
+    {
+      "type": "image",
+      "link": "link",
+      "caption": "image caption"
+    },
+    {
+      "type": "paragraph",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in consectetur ex. In purus nisi, imperdiet at semper ut, malesuada at nisi. Nulla imperdiet nisl tempor dui commodo, in varius felis faucibus. Aliquam urna velit, ultrices a varius eu, suscipit at sapien. Nunc sollicitudin varius justo a fermentum. Aliquam blandit placerat tincidunt. Nunc nec tellus accumsan, euismod enim eu, vehicula dolor. Donec faucibus lacus eget ipsum tincidunt cursus. Phasellus posuere hendrerit nisi id rhoncus. Etiam sed scelerisque nisl. Sed molestie nisl et fermentum egestas. Pellentesque volutpat leo justo, id hendrerit dolor volutpat pretium. Pellentesque laoreet neque odio, porta sodales mauris luctus a. Maecenas volutpat arcu ut porta consequat. Phasellus nec rutrum dui. Nullam malesuada mi et volutpat laoreet."
+    },
+    {
+      "type": "quote",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in consectetur ex. In purus nisi, imperdiet at semper ut, malesuada at nisi. Nulla imperdiet nisl tempor dui commodo, in varius felis faucibus. Aliquam urna velit, ultrices a varius eu, suscipit at sapien. Nunc sollicitudin varius justo a fermentum. Aliquam blandit placerat tincidunt. Nunc nec tellus accumsan, euismod enim eu, vehicula dolor. Donec faucibus lacus eget ipsum tincidunt cursus. Phasellus posuere hendrerit nisi id rhoncus. Etiam sed scelerisque nisl. Sed molestie nisl et fermentum egestas. Pellentesque volutpat leo justo, id hendrerit dolor volutpat pretium. Pellentesque laoreet neque odio, porta sodales mauris luctus a. Maecenas volutpat arcu ut porta consequat. Phasellus nec rutrum dui. Nullam malesuada mi et volutpat laoreet."
+    }
+  ]
+}]

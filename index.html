@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>M&N Outdoors Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional fonts for this theme -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this theme -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Temporary navbar container fix until Bootstrap 4 is patched -->
+    <style>
+    .navbar-toggler {
+        z-index: 1;
+    }
+    
+    @media (max-width: 576px) {
+        nav > .container {
+            width: 100%;
+        }
+    }
+    </style>
+
+</head>
+
+<body ng-app="app">
+
+    <!-- Navigation -->
+    <nav ng-controller="navController as navCtrl" class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" ui-sref="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" ui-sref="about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" ui-sref="contact">Contact</a>
+                    </li>
+                    <li class="nav-item" ng-if="navCtrl.isLoggedIn()">
+                        <a class="nav-link page-scroll"  ui-sref="addNewPost">Add New Post</a>
+                    </li>
+                    <li class="nav-item" ng-if="!navCtrl.isLoggedIn()">
+                        <a class="nav-link page-scroll" ui-sref="login">Log In</a>
+                    </li>
+                    <li class="nav-item" ng-if="navCtrl.isLoggedIn()">
+                        <a class="nav-link page-scroll" ng-click="navCtrl.logout()" href="">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div ng-repeat="alert in alerts" class="alert" ng-class="'alert-' + alert.type" role="alert">
+                {{alert.msg}}
+            </div>
+        </div>
+    </nav>
+
+   <main>
+       <div ui-view autoscroll="true"></div>
+   </main>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2017</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Version 3.1.1 -->
+    <script src="lib/jquery/jquery.js"></script>
+
+    <!-- MomentJs -->
+    <script src="lib/moment/moment-with-locales.min.js"></script>
+
+    <!-- angular -->
+    <script src="lib/angular/angular.min.js"></script>
+
+    <!-- angular router-->
+    <script src="lib/angular-ui-router/angular-ui-router.min.js"></script>
+
+    <!-- angular ui-bootstrap-->
+    <script src="lib/angular-ui-bootstrap/ui-bootstrap.js"></script>
+
+    <!-- angular moment -->
+    <script src="lib/angular-moment/angular-moment.min.js"></script>
+
+    <!-- angular jwt -->
+    <script src="lib/angular-jwt/angular-jwt.min.js"></script>
+
+    <!-- Tether -->
+    <script src="lib/tether/tether.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+    <!--- Angular App Stuff--->
+    <script src="js/app/app.js"></script>
+    <script src="js/app/services/alertSvc.js"></script>
+    <script src="js/app/services/blogpostsDataSvc.js"></script>
+    <script src="js/app/auth/AuthSvc.js"></script>
+    <script src="js/app/auth/AuthInterceptor.js"></script>
+    <script src="js/app/controllers/homeController.js"></script>
+    <script src="js/app/controllers/navController.js"></script>
+    <script src="js/app/controllers/postController.js"></script>
+    <script src="js/app/controllers/loginController.js"></script>
+    <script src="js/app/controllers/addNewPostController.js"></script>
+
+</body>
+
+</html>
