@@ -19,6 +19,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <div class="card">
+                        <div class="card-header">Trail Review</div>
+                        <div class="card-block">
+                            <h4 class="card-title">{{postCtrl.blogpostData.trailReview.name}}</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Located in {{postCtrl.blogpostData.trailReview.park}}</li>
+                            <li class="list-group-item">Difficulty {{postCtrl.blogpostData.trailReview.difficulty}}</li>
+                            <li class="list-group-item">Rating
+                                <span ng-repeat="star in postCtrl.stars(postCtrl.blogpostData.trailReview.rating)"> &#9733;</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
 
                     <p ng-repeat-start="content in postCtrl.blogpostData['post-content']" ng-if="content.type=='paragraph'">{{content.content}}</p>
 
