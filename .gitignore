@@ -47,11 +47,11 @@ Temporary Items
 .apdisk
 
 
-node_modules/
-css/
-img/
-js/
-mail/
-scss/
-views/
+/node_modules/
+/css/
+/img/
+/js/
+/mail/
+/scss/
+/views/
 .idea/
