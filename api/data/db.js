@@ -1,11 +1,23 @@
 var mongoose = require('mongoose');
-var dburl = 'mongodb://localhost:27017/meanblog';
+
 var retry = null;
-mongoose.connect(dburl);
+
+var connection_string = 'localhost:27017/meanblog';
+// if OPENSHIFT env variables are present, use the available connection info:
+if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
+  connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+      process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+      process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+      process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+      process.env.OPENSHIFT_APP_NAME;
+}
+
+
+mongoose.connect('mongodb://' + connection_string);
 
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function() {
-  console.log('Mongoose connected to ' + dburl);
+  console.log('Mongoose connected to mongodb://' + connection_string);
 });
 mongoose.connection.on('error', function(err) {
   console.log('Mongoose connection error: ' + err);

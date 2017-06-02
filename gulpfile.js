@@ -109,7 +109,7 @@ gulp.task('clean', function() {
 
 // Build
 gulp.task('build', ['minify-css', 'minify-js', 'copyLib'], function() {
-    return gulp.src(["css/*.css", "js/**", "index.html", "img/**", "views/**"], {base: "./"})
+    return gulp.src(["css/*.css", "js/**", "index.html", "img/**", "views/**", "mail/**"], {base: "./"})
         .pipe(gulp.dest('public'));
 });
 
@@ -142,7 +142,7 @@ gulp.task('nodemon', function (cb) {
 });
 
 //Run everything
-gulp.task('default', ['clean','browser-sync'], function() {
+gulp.task('default', ['clean','nodemon'], function() {
     gulp.start('build');
 });
 

@@ -48,6 +48,10 @@ Temporary Items
 
 
 node_modules/
-lib/
-public/
+css/
+img/
+js/
+mail/
+scss/
+views/
 .idea/

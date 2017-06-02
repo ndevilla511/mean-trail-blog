@@ -6,8 +6,13 @@ var bodyParser = require('body-parser');
 
 var routes = require('./api/routes');
 
+//openshift port or local port
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT ||3000;
+
+
 // Define the port to run on
-app.set('port', 3000);
+app.set('port', port);
 
 // Add middleware to console log every request
 app.use(function(req, res, next) {
@@ -26,7 +31,7 @@ app.use(bodyParser.json());
 app.use('/api', routes);
 
 // Listen for requests
-var server = app.listen(app.get('port'), function() {
+var server = app.listen(app.get('port'), ipaddress, function() {
   var port = server.address().port;
   console.log('Magic happens on port ' + port);
 });
