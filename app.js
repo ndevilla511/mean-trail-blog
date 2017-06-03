@@ -8,7 +8,7 @@ var routes = require('./api/routes');
 
 //openshift port or local port
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-var port = process.env.OPENSHIFT_NODEJS_PORT ||3000;
+var port = process.env.OPENSHIFT_NODEJS_PORT ||8080;
 
 
 // Define the port to run on
