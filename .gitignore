@@ -50,6 +50,7 @@ Temporary Items
 node_modules/
 /css/
 /img/
+/lib/
 /js/
 /mail/
 /scss/
