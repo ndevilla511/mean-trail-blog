@@ -56,3 +56,5 @@ node_modules/
 /scss/
 /views/
 .idea/
+
+package2.json
