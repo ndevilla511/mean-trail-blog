@@ -22,7 +22,7 @@
     "express": "^4.15.2",
     "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.10",
+    "gulp-clean-css": "^3.4.1",
     "gulp-concat": "^2.6.1",
     "gulp-concat-css": "^2.3.0",
     "gulp-header": "^1.8.7",
