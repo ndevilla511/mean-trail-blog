@@ -38,7 +38,7 @@ mongoose.connect(mongoURL);
 
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function() {
-  console.log('Mongoose connected to' + mongoURL);
+  console.log('Mongoose connected to ' + mongoURL);
 });
 mongoose.connection.on('error', function(err) {
   console.log('Mongoose connection error: ' + err);
