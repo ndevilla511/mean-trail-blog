@@ -1,23 +1,46 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+    retry = null,
+    mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
+    mongoURLLabel = "";
 
-var retry = null;
+if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
+  var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
+      mongoHost = process.env[mongoServiceName + '_SERVICE_HOST'],
+      mongoPort = process.env[mongoServiceName + '_SERVICE_PORT'],
+      mongoDatabase = process.env[mongoServiceName + '_DATABASE'],
+      mongoPassword = process.env[mongoServiceName + '_PASSWORD']
+  mongoUser = process.env[mongoServiceName + '_USER'];
 
-var connection_string = 'localhost:27017/meanblog';
-// if OPENSHIFT env variables are present, use the available connection info:
-if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
-  connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
-      process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
-      process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
-      process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
-      process.env.OPENSHIFT_APP_NAME;
+  if (mongoHost && mongoPort && mongoDatabase) {
+    mongoURLLabel = mongoURL = 'mongodb://';
+    if (mongoUser && mongoPassword) {
+      mongoURL += mongoUser + ':' + mongoPassword + '@';
+    }
+    // Provide UI label that excludes user id and pw
+    mongoURLLabel += mongoHost + ':' + mongoPort + '/' + mongoDatabase;
+    mongoURL += mongoHost + ':' +  mongoPort + '/' + mongoDatabase;
+
+  }
+} else {
+  mongoURL = 'mongodb://localhost:27017/meanblog';
 }
 
+//var connection_string = 'localhost:27017/meanblog';
+//// if OPENSHIFT env variables are present, use the available connection info:
+//if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
+//  connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+//      process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+//      process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+//      process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+//      process.env.OPENSHIFT_APP_NAME;
+//}
 
-mongoose.connect('mongodb://' + connection_string);
+
+mongoose.connect(mongoURL);
 
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function() {
-  console.log('Mongoose connected to mongodb://' + connection_string);
+  console.log('Mongoose connected to' + mongoURL);
 });
 mongoose.connection.on('error', function(err) {
   console.log('Mongoose connection error: ' + err);
