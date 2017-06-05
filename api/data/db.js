@@ -21,8 +21,6 @@ if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
     mongoURL += mongoHost + ':' +  mongoPort + '/' + mongoDatabase;
 
   }
-} else {
-  mongoURL = 'mongodb://localhost:27017/meanblog';
 }
 
 //var connection_string = 'localhost:27017/meanblog';
