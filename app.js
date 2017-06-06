@@ -22,6 +22,9 @@ app.use(function(req, res, next) {
 
 // Set static directory before defining routes
 app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', function(req, res){
+  res.sendFile(path.join(__dirname, '/views/index.html'));
+});
 
 // Enable parsing of posted forms
 app.use(bodyParser.urlencoded({ extended: false }));
